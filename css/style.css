@@ -1,0 +1,76 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#calculator {
+    margin-top: 90px;
+    width: 300px;
+    height: 400px;
+    display: grid;
+    grid-template-areas:
+        "display display display display"
+        "clear clear delete delete"
+        "one two three divide"
+        "four five six multiply"
+        "seven eight nine substract"
+        "zero . equal add";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 4px;
+    background-color: cornflowerblue;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.button {
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button-number {
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#display {
+    grid-area: display;
+    background-color: black;
+    border-radius: 8px;
+    color: azure;
+    text-align: right;
+    font-size: 2.5rem;
+    padding: .4rem;
+}
+
+#clear {
+    grid-area: clear;
+}
+
+#delete {
+    grid-area: delete;
+}
+
+#div {
+    grid-area: divide;
+}
+
+#mul {
+    grid-area: multiply;
+}
+
+#sub {
+    grid-area: substract;
+}
+
+#add {
+    grid-area: add;
+}
+
+#equal {
+    grid-area: equal;
+}
