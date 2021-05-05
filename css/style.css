@@ -8,7 +8,8 @@ body {
 }
 
 #calculator {
-    margin-top: 90px;
+    margin-top: 10%;
+    margin-bottom: 10%;
     width: 300px;
     height: 400px;
     display: grid;
@@ -30,11 +31,13 @@ body {
 .button {
     border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
 }
 
 .button-number {
     border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
 }
 
 #display {
