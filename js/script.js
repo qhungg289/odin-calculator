@@ -20,36 +20,30 @@ buttonsArray.forEach(button => {
         });
     } else if (button.id === "add") {
         button.addEventListener("click", function() {
-            operator = "+";
-            firstNumber = parseInt(display.textContent);
-            display.textContent = "";
-            console.log(firstNumber);
+            callOperator("+");
         });
     } else if (button.id === "sub") {
         button.addEventListener("click", function() {
-            operator = "-";
-            firstNumber = parseInt(display.textContent);
-            display.textContent = "";
-            console.log(firstNumber);
+            callOperator("-");
         });
     } else if (button.id === "mul") {
         button.addEventListener("click", function() {
-            operator = "*";
-            firstNumber = parseInt(display.textContent);
-            display.textContent = "";
-            console.log(firstNumber);
+            callOperator("*");
         });
     } else if (button.id === "div") {
         button.addEventListener("click", function() {
-            operator = "/";
-            firstNumber = parseInt(display.textContent);
-            display.textContent = "";
-            console.log(firstNumber);
+            callOperator("/");
         });
     } else if (button.id === "equal") {
         button.addEventListener("click", function() {
             secondNumber = parseInt(display.textContent);
-            display.textContent = operate(firstNumber, secondNumber, operator);
+            
+            if ((secondNumber === 0 && operator === "/") || (secondNumber === "") || (operator === "")) {
+                display.textContent = "ERROR!";
+            } else {
+                display.textContent = operate(firstNumber, secondNumber, operator);
+            }
+
             console.log(secondNumber);
         });
     }
@@ -61,7 +55,15 @@ buttonsArray.forEach(button => {
             });
         }
     }
+
+    function callOperator(op) {
+        operator = op;
+        firstNumber = parseInt(display.textContent);
+        display.textContent = "";
+        console.log(firstNumber);
+    }
 });
+
 
 // Operation function
 function add(a, b) {return a + b;}
