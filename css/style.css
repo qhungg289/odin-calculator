@@ -4,14 +4,16 @@ html {
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background-color: #2E3440;
 }
 
 #calculator {
-    margin-top: 5%;
-    margin-bottom: 10%;
+    margin-top: 10%;
     width: 300px;
-    height: 400px;
+    height: 430px;
     display: grid;
     grid-template-areas:
         "display display display display"
@@ -22,23 +24,36 @@ body {
         "zero . equal add";
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    gap: 4px;
-    background-color: cornflowerblue;
-    padding: 16px;
+    gap: 12px;
+    background-color: #ECEFF4;
+    padding: 24px;
     border-radius: 8px;
 }
 
+#credit {
+    font-size: .9rem;
+    color: #ECEFF4;
+    margin: 20px;
+}
+
 .button {
+    border: 2px solid #81A1C1;
     border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
+    background-color: #E5E9F0;
+    color: #4C566A;
+}
+
+.button:active {
+    background-color: #88C0D0;
 }
 
 #display {
     grid-area: display;
-    background-color: black;
+    background-color: #4C566A;
     border-radius: 8px;
-    color: azure;
+    color: #ECEFF4;
     text-align: right;
     font-size: 2.5rem;
     padding: .4rem;
@@ -46,28 +61,42 @@ body {
 
 #clear {
     grid-area: clear;
+    border-color: #BF616A;
+    color: #BF616A;
 }
 
 #delete {
     grid-area: delete;
+    border-color: #BF616A;
+    color: #BF616A;
 }
 
 #div {
     grid-area: divide;
+    border-color: #EBCB8B;
+    color: #EBCB8B;
 }
 
 #mul {
     grid-area: multiply;
+    border-color: #EBCB8B;
+    color: #EBCB8B;
 }
 
 #sub {
     grid-area: substract;
+    border-color: #EBCB8B;
+    color: #EBCB8B;
 }
 
 #add {
     grid-area: add;
+    border-color: #EBCB8B;
+    color: #EBCB8B;
 }
 
 #equal {
     grid-area: equal;
+    border-color: #A3BE8C;
+    color: #A3BE8C;
 }
