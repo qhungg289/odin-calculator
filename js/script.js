@@ -35,7 +35,7 @@ buttonsArray.forEach((button) => {
 		});
 	} else if (button.id === "equal") {
 		button.addEventListener("click", function () {
-			secondNumber = parseInt(display.textContent);
+			secondNumber = Number(display.textContent);
 
 			if (
 				(secondNumber === 0 && operator === "/") ||
@@ -53,7 +53,11 @@ buttonsArray.forEach((button) => {
 
 			console.log(secondNumber);
 		});
-	}
+	} else if (button.id === "decimal") {
+        button.addEventListener("click", function() {
+            display.textContent = display.textContent.concat(button.textContent);
+        });
+    }
 
 	for (let i = 0; i < 10; i++) {
 		if (button.id == i) {
@@ -65,7 +69,7 @@ buttonsArray.forEach((button) => {
 
 	function callOperator(op) {
 		operator = op;
-		firstNumber = parseInt(display.textContent);
+		firstNumber = Number(display.textContent);
 		display.textContent = "";
 		console.log(firstNumber);
 	}
@@ -73,19 +77,19 @@ buttonsArray.forEach((button) => {
 
 // Operation function
 function add(a, b) {
-	return a + b;
+	return Math.round((a + b) * 100) / 100;
 }
 
 function subtract(a, b) {
-	return a - b;
+	return Math.round((a - b) * 100) / 100;
 }
 
 function multiply(a, b) {
-	return a * b;
+	return Math.round((a * b) * 100) / 100;
 }
 
 function divide(a, b) {
-	return a / b;
+	return Math.round((a / b) * 100) / 100;
 }
 
 function operate(a, b, operator) {
