@@ -2,9 +2,9 @@ let operator = "";
 let firstNumber = "";
 let secondNumber = "";
 
-let display = document.getElementById("display");
 
 // Input and display handler
+let display = document.getElementById("display");
 let buttonsArray = [...document.getElementsByClassName("button")];
 buttonsArray.forEach(button => {
     if (button.id === "clear") {
@@ -17,7 +17,40 @@ buttonsArray.forEach(button => {
     } else if (button.id === "delete") {
         button.addEventListener("click", function() {
             display.textContent = display.textContent.slice(0, -1);
+        });
+    } else if (button.id === "add") {
+        button.addEventListener("click", function() {
+            operator = "+";
             firstNumber = parseInt(display.textContent);
+            display.textContent = "";
+            console.log(firstNumber);
+        });
+    } else if (button.id === "sub") {
+        button.addEventListener("click", function() {
+            operator = "-";
+            firstNumber = parseInt(display.textContent);
+            display.textContent = "";
+            console.log(firstNumber);
+        });
+    } else if (button.id === "mul") {
+        button.addEventListener("click", function() {
+            operator = "*";
+            firstNumber = parseInt(display.textContent);
+            display.textContent = "";
+            console.log(firstNumber);
+        });
+    } else if (button.id === "div") {
+        button.addEventListener("click", function() {
+            operator = "/";
+            firstNumber = parseInt(display.textContent);
+            display.textContent = "";
+            console.log(firstNumber);
+        });
+    } else if (button.id === "equal") {
+        button.addEventListener("click", function() {
+            secondNumber = parseInt(display.textContent);
+            display.textContent = operate(firstNumber, secondNumber, operator);
+            console.log(secondNumber);
         });
     }
 
@@ -25,7 +58,6 @@ buttonsArray.forEach(button => {
         if (button.id == i) {
             button.addEventListener("click", function() {
                 display.textContent = display.textContent.concat(i);
-                firstNumber = parseInt(display.textContent);
             });
         }
     }
@@ -43,16 +75,14 @@ function divide(a, b) {return a / b;};
 function operate(a, b, operator) {
     switch(operator) {
         case "+":
-            add(a, b);
-            break;
+            return add(a, b);
         case "-":
-            subtract(a, b);
-            break;
+            return subtract(a, b);
         case "*":
-            multiply(a, b);
-            break;
+            return multiply(a, b);
         case "/":
-            divide(a, b);
-            break;
+            return divide(a, b);
+        default:
+            return;
     }
 }
