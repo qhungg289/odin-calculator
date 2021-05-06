@@ -54,10 +54,12 @@ buttonsArray.forEach((button) => {
 			console.log(secondNumber);
 		});
 	} else if (button.id === "decimal") {
-        button.addEventListener("click", function() {
-            display.textContent = display.textContent.concat(button.textContent);
-        });
-    }
+		button.addEventListener("click", function () {
+			display.textContent = display.textContent.concat(
+				button.textContent
+			);
+		});
+	}
 
 	for (let i = 0; i < 10; i++) {
 		if (button.id == i) {
@@ -85,7 +87,7 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
-	return Math.round((a * b) * 100) / 100;
+	return Math.round(a * b * 100) / 100;
 }
 
 function divide(a, b) {
