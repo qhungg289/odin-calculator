@@ -1,102 +1,102 @@
 html {
-    font-family: 'Montserrat', sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #2E3440;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #2e3440;
 }
 
 #calculator {
-    margin-top: 10%;
-    width: 300px;
-    height: 430px;
-    display: grid;
-    grid-template-areas:
-        "display display display display"
-        "clear clear delete delete"
-        "one two three divide"
-        "four five six multiply"
-        "seven eight nine substract"
-        "zero . equal add";
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 12px;
-    background-color: #ECEFF4;
-    padding: 24px;
-    border-radius: 8px;
+	margin-top: 10%;
+	width: 300px;
+	height: 430px;
+	display: grid;
+	grid-template-areas:
+		"display display display display"
+		"clear clear delete delete"
+		"one two three divide"
+		"four five six multiply"
+		"seven eight nine substract"
+		"zero . equal add";
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	gap: 12px;
+	background-color: #eceff4;
+	padding: 24px;
+	border-radius: 8px;
 }
 
 #credit {
-    font-size: .9rem;
-    color: #ECEFF4;
-    margin: 20px;
+	font-size: 0.9rem;
+	color: #eceff4;
+	margin: 20px;
 }
 
 .button {
-    border: 2px solid #81A1C1;
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
-    background-color: #E5E9F0;
-    color: #4C566A;
+	border: 2px solid #81a1c1;
+	border-radius: 8px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.4rem;
+	background-color: #e5e9f0;
+	color: #4c566a;
 }
 
 .button:active {
-    background-color: #88C0D0;
+	background-color: #88c0d0;
 }
 
 #display {
-    grid-area: display;
-    background-color: #2E3440;
-    border-radius: 8px;
-    color: #ECEFF4;
-    text-align: right;
-    font-size: 2.5rem;
-    padding: .4rem;
+	grid-area: display;
+	background-color: #2e3440;
+	border-radius: 8px;
+	color: #eceff4;
+	text-align: right;
+	font-size: 2.5rem;
+	padding: 0.4rem;
 }
 
 #clear {
-    grid-area: clear;
-    border-color: #BF616A;
-    color: #BF616A;
+	grid-area: clear;
+	border-color: #bf616a;
+	color: #bf616a;
 }
 
 #delete {
-    grid-area: delete;
-    border-color: #BF616A;
-    color: #BF616A;
+	grid-area: delete;
+	border-color: #bf616a;
+	color: #bf616a;
 }
 
 #div {
-    grid-area: divide;
-    border-color: #EBCB8B;
-    color: #EBCB8B;
+	grid-area: divide;
+	border-color: #ebcb8b;
+	color: #ebcb8b;
 }
 
 #mul {
-    grid-area: multiply;
-    border-color: #EBCB8B;
-    color: #EBCB8B;
+	grid-area: multiply;
+	border-color: #ebcb8b;
+	color: #ebcb8b;
 }
 
 #sub {
-    grid-area: substract;
-    border-color: #EBCB8B;
-    color: #EBCB8B;
+	grid-area: substract;
+	border-color: #ebcb8b;
+	color: #ebcb8b;
 }
 
 #add {
-    grid-area: add;
-    border-color: #EBCB8B;
-    color: #EBCB8B;
+	grid-area: add;
+	border-color: #ebcb8b;
+	color: #ebcb8b;
 }
 
 #equal {
-    grid-area: equal;
-    border-color: #A3BE8C;
-    color: #A3BE8C;
+	grid-area: equal;
+	border-color: #a3be8c;
+	color: #a3be8c;
 }
