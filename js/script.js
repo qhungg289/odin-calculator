@@ -20,39 +20,19 @@ buttonsArray.forEach((button) => {
 		});
 	} else if (button.id === "add") {
 		button.addEventListener("click", function () {
-			timesClicked++;
-			if (timesClicked > 1) {
-				callSecondOperator("+");
-			} else {
-				callFirstOperator("+");
-			}
+			callOperator("+");
 		});
 	} else if (button.id === "sub") {
 		button.addEventListener("click", function () {
-			timesClicked++;
-			if (timesClicked > 1) {
-				callSecondOperator("-");
-			} else {
-				callFirstOperator("-");
-			}
+			callOperator("-");
 		});
 	} else if (button.id === "mul") {
 		button.addEventListener("click", function () {
-			timesClicked++;
-			if (timesClicked > 1) {
-				callSecondOperator("*");
-			} else {
-				callFirstOperator("*");
-			}
+			callOperator("*");
 		});
 	} else if (button.id === "div") {
 		button.addEventListener("click", function () {
-			timesClicked++;
-			if (timesClicked > 1) {
-				callSecondOperator("/");
-			} else {
-				callFirstOperator("/");
-			}
+			callOperator("/");
 		});
 	} else if (button.id === "equal") {
 		button.addEventListener("click", function () {
@@ -75,6 +55,14 @@ buttonsArray.forEach((button) => {
 	}
 });
 
+function callOperator(op) {
+	timesClicked++;
+	if (timesClicked > 1) {
+		callSecondOperator(op);
+	} else {
+		callFirstOperator(op);
+	}
+}
 
 function callFirstOperator(op) {
 	firstOperator = op;
