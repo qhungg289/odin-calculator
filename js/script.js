@@ -1,6 +1,10 @@
-let operator = "";
+let firstOperator = "";
+let secondOperator = "";
 let firstNumber = "";
 let secondNumber = "";
+let result = "";
+let timesClicked = 0;
+let temp = "";
 
 // Input and display handler
 let display = document.getElementById("display");
@@ -8,50 +12,51 @@ let buttonsArray = [...document.getElementsByClassName("button")];
 buttonsArray.forEach((button) => {
 	if (button.id === "clear") {
 		button.addEventListener("click", function () {
-			display.textContent = "";
-			operator = "";
-			firstNumber = "";
-			secondNumber = "";
+			clearButton();
 		});
 	} else if (button.id === "delete") {
 		button.addEventListener("click", function () {
-			display.textContent = display.textContent.slice(0, -1);
+			deleteButton();
 		});
 	} else if (button.id === "add") {
 		button.addEventListener("click", function () {
-			callOperator("+");
+			timesClicked++;
+			if (timesClicked > 1) {
+				callSecondOperator("+");
+			} else {
+				callFirstOperator("+");
+			}
 		});
 	} else if (button.id === "sub") {
 		button.addEventListener("click", function () {
-			callOperator("-");
+			timesClicked++;
+			if (timesClicked > 1) {
+				callSecondOperator("-");
+			} else {
+				callFirstOperator("-");
+			}
 		});
 	} else if (button.id === "mul") {
 		button.addEventListener("click", function () {
-			callOperator("*");
+			timesClicked++;
+			if (timesClicked > 1) {
+				callSecondOperator("*");
+			} else {
+				callFirstOperator("*");
+			}
 		});
 	} else if (button.id === "div") {
 		button.addEventListener("click", function () {
-			callOperator("/");
+			timesClicked++;
+			if (timesClicked > 1) {
+				callSecondOperator("/");
+			} else {
+				callFirstOperator("/");
+			}
 		});
 	} else if (button.id === "equal") {
 		button.addEventListener("click", function () {
-			secondNumber = Number(display.textContent);
-
-			if (
-				(secondNumber === 0 && operator === "/") ||
-				secondNumber === "" ||
-				operator === ""
-			) {
-				display.textContent = "ERROR!";
-			} else {
-				display.textContent = operate(
-					firstNumber,
-					secondNumber,
-					operator
-				);
-			}
-
-			console.log(secondNumber);
+			equalButton();
 		});
 	} else if (button.id === "decimal") {
 		button.addEventListener("click", function () {
@@ -68,14 +73,54 @@ buttonsArray.forEach((button) => {
 			});
 		}
 	}
-
-	function callOperator(op) {
-		operator = op;
-		firstNumber = Number(display.textContent);
-		display.textContent = "";
-		console.log(firstNumber);
-	}
 });
+
+
+function callFirstOperator(op) {
+	firstOperator = op;
+	firstNumber = Number(display.textContent);
+	display.textContent = "";
+	console.log(firstNumber);
+	console.log("First OP");
+}
+
+function callSecondOperator(op) {
+	secondOperator = op;
+	secondNumber = Number(display.textContent);
+	display.textContent = "";
+	console.log(secondNumber);
+	firstNumber = operate(firstNumber, secondNumber, firstOperator);
+	firstOperator = secondOperator;
+	console.log("Second OP");
+	console.log(firstNumber);
+}
+
+function clearButton() {
+	display.textContent = "";
+	firstOperator = "";
+	firstNumber = "";
+	secondNumber = "";
+	result = "";
+	timesClicked = 0;
+	console.log("Clear!");
+}
+
+function deleteButton() {
+	display.textContent = display.textContent.slice(0, -1);
+}
+
+function equalButton() {
+	secondNumber = Number(display.textContent);
+	result = operate(
+		firstNumber,
+		secondNumber,
+		firstOperator
+	);
+	display.textContent = result;
+	console.log(firstNumber);
+	console.log(secondNumber);
+	console.log(result);
+}
 
 // Operation function
 function add(a, b) {
