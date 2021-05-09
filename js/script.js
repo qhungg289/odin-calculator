@@ -4,7 +4,6 @@ let firstNumber = "";
 let secondNumber = "";
 let result = "";
 let timesClicked = 0;
-let temp = "";
 
 // Input and display handler
 let display = document.getElementById("display");
@@ -99,14 +98,8 @@ function deleteButton() {
 
 function equalButton() {
 	secondNumber = Number(display.textContent);
-	result = operate(
-		firstNumber,
-		secondNumber,
-		firstOperator
-	);
+	result = operate(firstNumber, secondNumber, firstOperator);
 	display.textContent = result;
-	console.log(firstNumber);
-	console.log(secondNumber);
 	console.log(result);
 }
 
