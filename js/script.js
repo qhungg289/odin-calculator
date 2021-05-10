@@ -6,7 +6,8 @@ let result = "";
 let timesClicked = 0;
 
 // Input and display handler
-let display = document.getElementById("display");
+let mainDisplay = document.getElementById("main-display");
+let secondDisplay = document.getElementById("second-display");
 let buttonsArray = [...document.getElementsByClassName("button")];
 buttonsArray.forEach((button) => {
 	if (button.id === "clear") {
@@ -39,16 +40,27 @@ buttonsArray.forEach((button) => {
 		});
 	} else if (button.id === "decimal") {
 		button.addEventListener("click", function () {
-			display.textContent = display.textContent.concat(
-				button.textContent
-			);
+			if (
+				mainDisplay.textContent == "" ||
+				mainDisplay.textContent == firstNumber ||
+				mainDisplay.textContent == secondNumber
+			) {
+				mainDisplay.textContent = mainDisplay.textContent.concat("0");
+				mainDisplay.textContent = mainDisplay.textContent.concat(
+					button.textContent
+				);
+			} else if (!mainDisplay.textContent.includes(".")) {
+				mainDisplay.textContent = mainDisplay.textContent.concat(
+					button.textContent
+				);
+			}
 		});
 	}
 
 	for (let i = 0; i < 10; i++) {
 		if (button.id == i) {
 			button.addEventListener("click", function () {
-				display.textContent = display.textContent.concat(i);
+				mainDisplay.textContent = mainDisplay.textContent.concat(i);
 			});
 		}
 	}
@@ -65,42 +77,39 @@ function callOperator(op) {
 
 function callFirstOperator(op) {
 	firstOperator = op;
-	firstNumber = Number(display.textContent);
-	display.textContent = "";
-	console.log(firstNumber);
-	console.log("First OP");
+	firstNumber = Number(mainDisplay.textContent);
+	mainDisplay.textContent = "";
 }
 
 function callSecondOperator(op) {
 	secondOperator = op;
-	secondNumber = Number(display.textContent);
-	display.textContent = "";
-	console.log(secondNumber);
+	secondNumber = Number(mainDisplay.textContent);
+	mainDisplay.textContent = "";
 	firstNumber = operate(firstNumber, secondNumber, firstOperator);
+	secondDisplay.textContent = firstNumber;
 	firstOperator = secondOperator;
-	console.log("Second OP");
-	console.log(firstNumber);
 }
 
 function clearButton() {
-	display.textContent = "";
+	mainDisplay.textContent = "";
+	secondDisplay.textContent = 0;
 	firstOperator = "";
 	firstNumber = "";
 	secondNumber = "";
 	result = "";
 	timesClicked = 0;
-	console.log("Clear!");
 }
 
 function deleteButton() {
-	display.textContent = display.textContent.slice(0, -1);
+	mainDisplay.textContent = mainDisplay.textContent.slice(0, -1);
 }
 
 function equalButton() {
-	secondNumber = Number(display.textContent);
+	secondNumber = Number(mainDisplay.textContent);
 	result = operate(firstNumber, secondNumber, firstOperator);
-	display.textContent = result;
-	console.log(result);
+	mainDisplay.textContent = result;
+	secondDisplay.textContent = 0;
+	timesClicked = 0;
 }
 
 // Operation function
@@ -117,6 +126,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+	if (b === 0) return "ERROR";
 	return Math.round((a / b) * 100) / 100;
 }
 
