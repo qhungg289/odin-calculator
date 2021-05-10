@@ -1,9 +1,9 @@
 :root {
 	--dark-gray: #4d4d4d;
-    --light-gray: #eceff4;
-    --operator-button: #ebcb8b;
-    --remove-button: #bf616a;
-    --equal-button: #a3be8c;
+	--light-gray: #d8dee9;
+	--operator-button: #ebcb8b;
+	--remove-button: #bf616a;
+	--equal-button: #a3be8c;
 }
 
 html {
@@ -36,45 +36,52 @@ body {
 	padding: 30px;
 	border-radius: 19px;
 	background: var(--dark-gray);
-	box-shadow:  13px 13px 23px #343434,
-				-13px -13px 23px #666666;
+	box-shadow: 13px 13px 23px #343434, -13px -13px 23px #666666;
 }
 
 #credit {
 	font-size: 0.9rem;
 	color: var(--light-gray);
-	margin: 20px;
+	margin: 30px;
 }
 
 .button {
-	border-style: none ;
+	border-style: none;
 	font-family: "Montserrat", sans-serif;
 	font-size: 1.4rem;
 	color: var(--light-gray);
-    transition: .4s;
+	transition: 0.4s;
 	border-radius: 10px;
 	background: var(--dark-gray);
-	box-shadow:  5px 5px 11px #3a3a3a,
-             	-5px -5px 11px #606060;
+	box-shadow: 5px 5px 11px #3a3a3a, -5px -5px 11px #606060;
 }
 
 .button:active {
 	border-radius: 10px;
 	background: var(--dark-gray);
-	box-shadow: inset 5px 5px 11px #3a3a3a,
-				inset -5px -5px 11px #606060;
+	box-shadow: inset 5px 5px 11px #3a3a3a, inset -5px -5px 11px #606060;
 }
 
 #display {
+	height: 5.5rem;
 	grid-area: display;
 	color: var(--light-gray);
 	text-align: right;
 	font-size: 2.3rem;
-	padding: 0.4rem;
+	padding: 1rem;
 	border-radius: 10px;
 	background: var(--dark-gray);
-	box-shadow: inset 8px 8px 16px #313131,
-            	inset -8px -8px 16px #696969;
+	box-shadow: inset 8px 8px 16px #313131, inset -8px -8px 16px #696969;
+}
+
+#main-display {
+	margin: 0.2rem;
+	font-size: 2.4rem;
+}
+
+#second-display {
+	margin: 0.2rem;
+	font-size: 1.3rem;
 }
 
 #clear {
