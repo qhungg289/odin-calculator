@@ -26,10 +26,10 @@ body {
 	grid-template-areas:
 		"display display display display"
 		"clear clear delete delete"
-		"one two three divide"
+		"seven eight nine divide"
 		"four five six multiply"
-		"seven eight nine substract"
-		"zero . equal add";
+		"one two three substract"
+		"zero dot equal add";
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(6, 1fr);
 	gap: 15px;
