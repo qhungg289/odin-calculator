@@ -40,20 +40,7 @@ buttonsArray.forEach((button) => {
 		});
 	} else if (button.id === "decimal") {
 		button.addEventListener("click", function () {
-			if (
-				mainDisplay.textContent == "" ||
-				mainDisplay.textContent == firstNumber ||
-				mainDisplay.textContent == secondNumber
-			) {
-				mainDisplay.textContent = mainDisplay.textContent.concat("0");
-				mainDisplay.textContent = mainDisplay.textContent.concat(
-					button.textContent
-				);
-			} else if (!mainDisplay.textContent.includes(".")) {
-				mainDisplay.textContent = mainDisplay.textContent.concat(
-					button.textContent
-				);
-			}
+			decimalButton(button);
 		});
 	}
 
@@ -105,11 +92,32 @@ function deleteButton() {
 }
 
 function equalButton() {
+	// HANDLE ERROR HERE!!!!
 	secondNumber = Number(mainDisplay.textContent);
 	result = operate(firstNumber, secondNumber, firstOperator);
 	mainDisplay.textContent = result;
 	secondDisplay.textContent = 0;
+	firstNumber = "";
+	secondNumber = "";
+	firstOperator = "";
 	timesClicked = 0;
+}
+
+function decimalButton(button) {
+	if (
+		mainDisplay.textContent == "" ||
+		mainDisplay.textContent == firstNumber ||
+		mainDisplay.textContent == secondNumber
+	) {
+		mainDisplay.textContent = mainDisplay.textContent.concat("0");
+		mainDisplay.textContent = mainDisplay.textContent.concat(
+			button.textContent
+		);
+	} else if (!mainDisplay.textContent.includes(".")) {
+		mainDisplay.textContent = mainDisplay.textContent.concat(
+			button.textContent
+		);
+	}
 }
 
 // Operation function
