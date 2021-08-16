@@ -36,7 +36,6 @@ body {
 	padding: 30px;
 	border-radius: 19px;
 	background: var(--dark-gray);
-	box-shadow: 13px 13px 23px #343434, -13px -13px 23px #666666;
 }
 
 #credit {
@@ -91,7 +90,7 @@ body {
 	width: 10ch;
 	overflow: hidden;
 	white-space: nowrap;
-    text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
 
 #second-display {
