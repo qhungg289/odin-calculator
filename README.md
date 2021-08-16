@@ -2,7 +2,7 @@
 
 Basic calculator made for learning purpose at **The Odin Project**.
 
-[Live Preview](https://qhungg289.github.io/odin-calculator/)
+[Live demo](https://qhungg289.github.io/odin-calculator/).
 
 **Preview**:
 
