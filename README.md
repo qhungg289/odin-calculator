@@ -1,7 +1,9 @@
-# odin-calculator
+# Odin Calculator 🧮
 
-Basic calculator created for The Odin Project.
-
-![Screenshot](https://i.imgur.com/qU3pRF0.png)
+Basic calculator made for learning purpose at **The Odin Project**.
 
 [Live Preview](https://qhungg289.github.io/odin-calculator/)
+
+**Preview**:
+
+![Screenshot](./asset/readme-calculator.png)
